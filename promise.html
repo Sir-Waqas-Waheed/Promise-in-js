@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise in JS</title>
+    <script>
+        function prom(data) {
+            return new Promise(function (resolve, reject) 
+                {  console.log("fetching data please wait!")
+                    setTimeout( ()=>{
+                        if(data)
+                    {
+                        resolve("Successfull");
+            
+                    }
+                    else{
+                        reject("failed");
+                    }
+                    }, 3000 )
+
+                }
+
+            )
+        }
+        let onFulfilment = (result)=>
+        {
+            console.log(result);
+        }
+        let onRejection = (error)=>
+        {
+            console.log(error);
+        }
+        prom(true).then(onFulfilment).catch(onRejection);
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
